@@ -1,5 +1,7 @@
 # Repository guidance
 
+For `swarm ready` documentation work or the offline link check, read [SWARM_READY.md](SWARM_READY.md#verification-starting-point).
+
 ## Adding a new README entry
 
 - Check that the project is not already listed.

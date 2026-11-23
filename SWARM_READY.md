@@ -21,7 +21,10 @@ If a `swarm-ready` skill is installed, load it. Otherwise execute the documented
 
 ## Repository starting point
 
-Read: [AGENTS.md](AGENTS.md), [README.md](README.md), [.github](.github).
+Read [AGENTS.md](AGENTS.md) for the project-entry format and use the [README](README.md#techniques)
+as the curated index. Reuse [PR #1](https://github.com/Kitkitkittt/techniques/pull/1)
+for this documentation slice; preserve upstream attribution, section placement,
+and unrelated project entries. GitHub Issues is disabled in this fork.
 
 Continue an existing approved issue or a clearly scoped user objective after inspecting the source map below. If none is selected, return the smallest useful improvement and its verifier as the handoff; do not begin a portfolio-wide rewrite.
 
@@ -41,7 +44,23 @@ The base above is an inspection snapshot, not a permanent working branch. Refres
 
 ## Verification starting point
 
-No executable acceptance command was established by this bounded source inspection. Read `AGENTS.md`, `README.md`, `.github` and record the narrowest existing check before implementation. Do not invent a `test` command or infer that the repository has no tests from this gap. For a documentation-only task, check links, factual source anchors and whitespace; do not build unrelated application code.
+For documentation changes, review the README diff for placement, duplicate
+entries and format as applicable. From the repository root, check the tracked
+local targets (including the README logo) and run `git diff --check` before
+committing:
+
+```sh
+git ls-files --error-unmatch -- AGENTS.md README.md SWARM_READY.md \
+  images/logo.png .github/workflows/action.yml .mlc_config.json
+```
+
+Expect all six paths and exit 0. Compare the handoff and agent-entry links and
+anchors with the local source. This check does not test remote links.
+The [Check Markdown links workflow](.github/workflows/action.yml) is defined
+for pushes and PRs targeting `master` and checks `README.md` using the tracked
+[configuration](.mlc_config.json). If enabled, it contacts external sites.
+Keep its result separate from these offline checks; preserve the workflow and
+do not crawl the catalog for this handoff.
 
 ## Required handoff result
 
